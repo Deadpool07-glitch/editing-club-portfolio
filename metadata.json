@@ -1,0 +1,6 @@
+{
+  "name": "THE EDITING CLUB",
+  "description": "A premium cinematic portfolio website for high-end documentary editors, map animators and motion designers designed with custom layouts, oversized workspace alignments and smooth interactive film details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
