@@ -103,7 +103,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
                   src={portraitImg}
                   alt="THE EDITING CLUB Film Director & Editor Portrait"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top opacity-100 transition-all duration-1000 ease-out"
+                  className="w-full h-[115%] object-cover object-top translate-y-[6%] opacity-100 transition-all duration-1000 ease-out"
                 />
               </motion.div>
 
