@@ -97,15 +97,14 @@ export default function Hero({ onOpenContact }: HeroProps) {
                 initial={{ scale: 1.05, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
-                className="relative w-full h-[40vh] sm:h-[45vh] lg:h-[48vh] rounded-[32px] overflow-hidden border border-neutral-900 shadow-2xl group flex items-center justify-center bg-neutral-950"
+                className="relative w-full h-[50vh] sm:h-[55vh] lg:h-[60vh] rounded-[32px] overflow-hidden ..."
               >
                 <img
                   src={portraitImg}
                   alt="THE EDITING CLUB Film Director & Editor Portrait"
                   referrerPolicy="no-referrer"
-                  className="w-full h-[120%] object-cover object-top opacity-100 -translate-y-[10%] transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover object-top opacity-100 transition-all duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-90 pointer-events-none" />
               </motion.div>
 
               {/* PERSONAL BRANDING DIRECTLY BELOW PORTRAIT */}
