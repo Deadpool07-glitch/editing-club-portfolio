@@ -48,8 +48,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: idx * 0.12 }}
-              whileHover={{ y: -6 }}
-              className="bg-bg-card rounded-[32px] p-8 border border-border-main hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between h-56 group text-left"
+              className="bg-bg-card rounded-[32px] p-8 border border-border-main hover:shadow-xl hover:-translate-y-1.5 transform-gpu transition-all duration-300 relative flex flex-col justify-between h-56 group text-left"
             >
               <div className="flex justify-between items-center w-full">
                 {/* Icon Circle */}

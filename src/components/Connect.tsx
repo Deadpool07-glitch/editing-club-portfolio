@@ -51,8 +51,7 @@ export default function Connect() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="bg-bg-card rounded-[24px] p-5 border border-border-main flex flex-col justify-between h-44 hover:shadow-xl transition-all duration-300 text-left group"
+              className="bg-bg-card rounded-[24px] p-5 border border-border-main flex flex-col justify-between h-44 hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transform-gpu transition-all duration-300 text-left group"
             >
               {/* Icon Row */}
               <div className="flex justify-between items-center w-full">

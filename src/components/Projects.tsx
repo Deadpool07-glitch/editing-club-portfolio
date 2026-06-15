@@ -7,6 +7,7 @@ import motionGlobeImg from "../assets/images/motion_globe_1780859905568.png";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   // Resolve custom image routes e.g. MOTION_GLOBE
   const getProjectImage = (proj: Project) => {
@@ -46,32 +47,25 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: (idx % 2) * 0.15 }}
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
               onClick={() => setSelectedProject(project)}
               className="group cursor-pointer flex flex-col gap-6"
             >
               {/* Image/Video poster with rounded corners (40px or large, cinematic aspect ratio) */}
-              <div id={`project-card-${project.id}`} className="relative aspect-video sm:aspect-16/10 rounded-[30px] md:rounded-[40px] overflow-hidden bg-neutral-900 border border-border-main shadow-md group">
-                {project.video ? (
-                  <video
-                    src={project.video}
-                    poster={getProjectImage(project)}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 ease-out"
-                  />
-                ) : (
-                  <img
-                    src={getProjectImage(project)}
-                    alt={`${project.name} documentary poster`}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 ease-out"
-                  />
-                )}
+              <div id={`project-card-${project.id}`} className="relative aspect-video sm:aspect-16/10 rounded-[30px] md:rounded-[40px] overflow-hidden bg-neutral-900 border border-border-main shadow-md group transform-gpu">
+                <video
+                  src={project.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
                 {/* Year Indicator Top-Right Badge */}
-                <div className="absolute top-6 right-6 font-mono text-[10px] tracking-widest text-[#FFFFFF] bg-[#0A0A0A]/40 backdrop-blur-md p-1.5 px-3 rounded-full border border-[#FFFFFF]/10 select-none pointer-events-none">
+                <div className="absolute top-6 right-6 font-mono text-[10px] tracking-widest text-[#FFFFFF] bg-[#0A0A0A]/85 p-1.5 px-3 rounded-full border border-[#FFFFFF]/10 select-none pointer-events-none">
                   {project.year}
                 </div>
               </div>
@@ -102,7 +96,7 @@ export default function Projects() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 z-50 bg-[#000000]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-8 overflow-y-auto dark-selection-scope text-white"
+              className="fixed inset-0 z-50 bg-[#000000]/98 flex items-center justify-center p-4 md:p-8 overflow-y-auto dark-selection-scope text-white"
             >
               <motion.div
                 initial={{ scale: 0.95, y: 30 }}

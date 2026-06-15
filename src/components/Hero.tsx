@@ -21,7 +21,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
   };
 
   return (
-    <header className="px-4 md:px-8 pt-24 pb-8 w-full">
+    <header className="px-4 md:px-8 pt-24 pb-8 w-full select-none">
       {/* Massive Rounded Main Container */}
       <motion.div
         id="hero-container"
@@ -97,13 +97,14 @@ export default function Hero({ onOpenContact }: HeroProps) {
                 initial={{ scale: 1.05, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
-                className="relative w-full h-[50vh] sm:h-[55vh] lg:h-[60vh] rounded-[32px] overflow-hidden ..."
+                className="relative w-full h-[40vh] sm:h-[45vh] lg:h-[48vh] rounded-[32px] overflow-hidden border border-neutral-900 shadow-2xl group flex items-start justify-center bg-neutral-950 isolate"
               >
                 <img
                   src={portraitImg}
                   alt="THE EDITING CLUB Film Director & Editor Portrait"
                   referrerPolicy="no-referrer"
-                  className="w-full h-[115%] object-cover object-top translate-y-[6%] opacity-100 transition-all duration-1000 ease-out"
+                  className="absolute top-0 left-0 w-full object-cover opacity-100 transition-all duration-1000 ease-out"
+                  style={{ height: "calc(100% + 80px)", transform: "translateY(-50px)", objectFit: "cover" }}
                 />
               </motion.div>
 

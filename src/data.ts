@@ -33,12 +33,12 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "energy-security",
-    name: "ALUMINIUM SHORTAGE",
-    category: "Global Supply Chain Documentary",
+    name: "IBM Animation",
+    category: "IBM Revenue and Computer Supply",
     year: "2025",
     description: "An investigative documentary exploring national power grids, uranium reserves, and sovereign energy resilience under global climate stress.",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200", // Misty power transformer environment
-    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1781287140/A-05_essgox.mp4",
+    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1781462594/1755715607714_d3ymyt.mp4",
     tags: ["Cinematic Grade", "Spatial Map Overlays", "Sound Scapes"]
   },
   {
@@ -53,12 +53,12 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "motion-design-reel",
-    name: "MUMBAI MAP",
-    category: "Geospatial Visualization",
+    name: "War Map Animation",
+    category: "Geopolitical Visualization",
     year: "2025",
     description: "An abstract exploration of physical material textures, glass refraction, liquid metal flow, and custom typography titles.",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200", // Minimal monochrome curved geometry structure
-    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1781288112/F_Map_compile_vgpsp1.mp4",
+    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1781462296/war_map_qa7cf3.mp4",
     tags: ["Vray Textures", "Kinetic Typography", "Title Sequence"]
   }
 ];

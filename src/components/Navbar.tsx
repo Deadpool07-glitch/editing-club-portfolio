@@ -37,7 +37,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
         id="navbar"
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 px-6 md:px-12 py-6 ${
           scrolled
-            ? "bg-bg-base/80 backdrop-blur-md border-b border-border-main/50 py-4"
+            ? "bg-bg-base/98 border-b border-border-main/50 py-4"
             : "bg-transparent"
         }`}
       >
