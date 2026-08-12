@@ -17,7 +17,7 @@ export default function Footer() {
           
           {/* LEFT SIDE: Brand & statement */}
           <div className="md:col-span-5 flex flex-col gap-2">
-            <h3 className="font-display font-semibold uppercase tracking-widest text-[#FFFFFF] text-[13px] sm:text-[14px]">
+            <h3 className="font-display font-semibold uppercase tracking-widest text-text-main text-[13px] sm:text-[14px]">
               THE EDITING CLUB
             </h3>
             <p className="font-sans text-[11px] sm:text-xs text-neutral-400 max-w-sm leading-relaxed tracking-wide">

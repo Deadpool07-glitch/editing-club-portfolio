@@ -2,11 +2,11 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SHORTS } from "../data";
 import { ShortContent } from "../types";
-import { Play, Pause, Eye, X, RefreshCw, Sparkles, Smartphone } from "lucide-react";
+import { Play, X, Smartphone } from "lucide-react";
 
 export default function Shorts() {
   const [selectedShort, setSelectedShort] = useState<ShortContent | null>(null);
-  const [isMobilePlaying, setIsMobilePlaying] = useState(true);
+  const [isMobilePlaying, setIsMobilePlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMobilePlay = () => {
@@ -48,17 +48,19 @@ export default function Shorts() {
                 setSelectedShort(item);
                 setIsMobilePlaying(true);
               }}
-              className="group cursor-pointer bg-bg-card rounded-[32px] overflow-hidden border border-border-main p-3 hover:shadow-xl transition-all duration-500"
+              className="group cursor-pointer bg-bg-card rounded-[32px] overflow-hidden border border-border-main p-3 hover:shadow-xl transition-all duration-500 flex flex-col justify-between"
             >
               {/* Cover thumbnail with Play overlay & Hover animations */}
               <div className="relative aspect-[9/16] rounded-[24px] overflow-hidden bg-neutral-950">
-                <img
-                  src={item.image}
-                  alt={`${item.title} cover`}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out"
+                <video
+                  src={item.video}
+                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                 />
-                
+                  
                 {/* Netflix-like overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
@@ -73,24 +75,21 @@ export default function Shorts() {
                 <span className="absolute top-4 left-4 font-mono text-[9px] text-white bg-black/60 p-1 px-2.5 rounded-full border border-white/10">
                   {item.duration}
                 </span>
-
-                {/* Views Bottom-Right badge */}
-                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/55 backdrop-blur-md px-3 py-1 rounded-full border border-neutral-800 text-white select-none">
-                  <Eye size={10} className="text-neutral-400" />
-                  <span className="font-mono text-[9px] tracking-wider uppercase font-semibold">
-                    {item.views}
-                  </span>
-                </div>
               </div>
 
               {/* Descriptions & titles */}
-              <div className="p-4 align-left text-left select-none">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-text-sub block mb-1">
-                  {item.category}
-                </span>
-                <h4 className="font-display font-semibold text-lg text-text-main group-hover:text-text-sub transition-colors uppercase">
-                  {item.title}
-                </h4>
+              <div className="p-4 align-left text-left select-none flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-text-sub block mb-1">
+                    {item.category}
+                  </span>
+                  <h4 className="font-display font-semibold text-lg text-text-main group-hover:text-text-sub transition-colors uppercase mb-1.5">
+                    {item.title}
+                  </h4>
+                  <p className="font-sans text-xs text-text-sub line-clamp-3 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -128,10 +127,12 @@ export default function Shorts() {
                   {/* Vertical HTML5 Video loop */}
                   <video
                     ref={videoRef}
-                    src="https://assets.mixkit.co/videos/preview/mixkit-misty-peaks-of-mountain-ridges-at-dawn-43183-large.mp4"
+                    src={selectedShort?.video}
                     className="absolute inset-0 w-full h-full object-cover brightness-90 grayscale opacity-90"
                     playsInline
                     autoPlay
+                    controls
+                    muted={false}
                     loop
                     preload="auto"
                   />
@@ -159,14 +160,11 @@ export default function Shorts() {
                     )}
                   </div>
 
-                  {/* Bottom details & reels stats overlay */}
+                  {/* Bottom details overlay */}
                   <div className="absolute bottom-8 left-6 right-6 text-left text-white z-30 flex flex-col gap-2">
                     <div className="flex gap-2">
                       <span className="font-mono text-[8px] uppercase tracking-wider bg-white/10 backdrop-blur-sm p-1 px-2.5 rounded-full border border-white/10 text-white">
                         {selectedShort.category}
-                      </span>
-                      <span className="font-mono text-[8px] uppercase tracking-wider bg-yellow-500/10 backdrop-blur-sm p-1 px-2.5 rounded-full border border-yellow-500/20 text-yellow-500 flex items-center gap-1">
-                        <Sparkles size={8} /> 87% AVG RETENTION
                       </span>
                     </div>
 
@@ -174,14 +172,9 @@ export default function Shorts() {
                       {selectedShort.title}
                     </h3>
                     
-                    <p className="font-sans text-[10px] text-neutral-400 line-clamp-2 leading-relaxed">
-                      Sleek multi-layered structure with custom typography designed to maximize scroll-stop and hold audience focus for over {selectedShort.duration}.
+                    <p className="font-sans text-[11px] text-neutral-300 leading-relaxed">
+                      {selectedShort.description}
                     </p>
-
-                    <div className="flex items-center justify-between border-t border-white/10 pt-3 mt-1 font-mono text-[9px] text-neutral-550">
-                      <span>AUDIENCE ENGAGED</span>
-                      <span className="text-white font-bold font-mono">{selectedShort.views}</span>
-                    </div>
                   </div>
 
                 </motion.div>

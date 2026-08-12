@@ -65,27 +65,30 @@ export const PROJECTS: Project[] = [
 
 export const SHORTS: ShortContent[] = [
   {
-    id: "geopolitics-shorts",
-    title: "Geopolitics Shorts",
-    views: "12M+ Views",
-    category: "Territorial Borders",
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800", // Minimal global map overview
+    id: "communication-shorts",
+    title: "COMMUNICATION SHORTS",
+    category: "COMMUNICATION",
+    description: "Practical communication techniques, persuasion frameworks and real-world speaking strategies designed to improve clarity, confidence and audience engagement.",
+    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
+    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1784397414/comminication-20_December-_1_v8c361.mp4",
     duration: "0:58"
   },
   {
-    id: "business-shorts",
-    title: "Business Shorts",
-    views: "15M+ Views",
-    category: "Monopoly Finance",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800", // Financial dark screens Chart
+    id: "storytelling-shorts",
+    title: "STORYTELLING SHORTS",
+    category: "STORYTELLING",
+    description: "Narrative structure, emotional pacing and storytelling principles that transform complex ideas into highly engaging short-form content.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
+    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1786470138/Storytellar1_1feb_V1_1_pfph0r.mp4",
     duration: "0:52"
   },
   {
-    id: "motion-design-reels",
-    title: "Motion Design Reels",
-    views: "24M+ Views",
-    category: "Dynamic Physics",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800", // Cyber dark lines tech pattern
+    id: "business-shorts",
+    title: "BUSINESS SHORTS",
+    category: "BUSINESS",
+    description: "Business insights, startup lessons, marketing psychology and strategic thinking presented through cinematic motion graphics.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    video: "https://res.cloudinary.com/dvb4j8sfk/video/upload/v1786470739/VI_AD_12june_V_evbplv.mp4",
     duration: "0:45"
   }
 ];

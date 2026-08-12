@@ -12,11 +12,14 @@ export interface Project {
 export interface ShortContent {
   id: string;
   title: string;
-  views: string;
   category: string;
+  description: string;
   image: string;
+  video: string;
   duration: string;
+  views?: string;
 }
+
 
 export interface ServiceBlock {
   id: string;
